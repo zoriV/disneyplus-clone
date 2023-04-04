@@ -1,0 +1,6 @@
+@use "var" as v;
+@forward "var";
+
+body{
+    background-color: v.$bg;
+}
