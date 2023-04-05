@@ -1,6 +1,8 @@
 @use "var" as v;
 @forward "var";
 
-body{
+#app{
     background-color: v.$bg;
+    margin: 0;
+    padding: 0;
 }
