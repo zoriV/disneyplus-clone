@@ -1,6 +1,7 @@
 <template>
   <div class="card">
-    <!-- <img :src="require(`../assets/${props.imgSrc}`)" /> -->
+    <!-- TODO: Fix image size -->
+    <img :src="getImageURL()" :alt="title + ' icon'" loading="lazy"/>
     <h3 class="title">{{ title }}</h3>
     <ul>
       <li v-for="{ name, key } in dev" :key="key">{{ name }}</li>
@@ -17,6 +18,10 @@ const props = defineProps({
   title: String,
   imgSrc: String,
 });
+
+function getImageURL(){
+  return `/img/${props.imgSrc}`
+}
 
 const dev = ref([]);
 props.devices.forEach((element) => {
