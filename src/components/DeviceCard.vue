@@ -1,6 +1,5 @@
 <template>
   <div class="card">
-    <!-- TODO: Fix image size -->
     <img :src="getImageURL()" :alt="title + ' icon'" loading="lazy"/>
     <h3 class="title">{{ title }}</h3>
     <ul>
@@ -41,12 +40,19 @@ props.devices.forEach((element) => {
     margin-block: 20px;
     padding: 0;
     color: #fff;
+    font-weight: 700;
+    font-size: 1.75em;
+  }
+  img{
+    width: 400px;
   }
   ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
     color: rgb(192, 192, 192);
+    line-height: 1.52em;
+    font-size: 18px;
   }
 }
 </style>
