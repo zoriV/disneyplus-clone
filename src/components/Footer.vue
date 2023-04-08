@@ -17,7 +17,7 @@
 </template>
 <script setup>
 import {ref, onMounted} from "vue";
-import logo from "@/assets/img/logo.svg"
+import logo from "@Assets/img/logo.svg"
 const year = new Date().getFullYear();
 
 const yearRef = ref(null);

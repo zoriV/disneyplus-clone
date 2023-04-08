@@ -2,29 +2,54 @@
 @forward "var";
 
 @font-face {
-    font-family: 'Avenir';
-    src: url('/font/Avenir/Avenir-Light.ttf') format('truetype');
-    font-weight: 100;
-    font-style: normal;
+  font-family: "Avenir";
+  src: url("/font/Avenir/Avenir-Light.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'Avenir';
-    src: url('/font/Avenir/Avenir-Heavy.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
+  font-family: "Avenir";
+  src: url("/font/Avenir/Avenir-Heavy.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'Avenir';
-    src: url('/font/Avenir/Avenir-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Avenir";
+  src: url("/font/Avenir/Avenir-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
 }
 
-*,*::after,*::before{
-    box-sizing: border-box;
-    letter-spacing: .25px;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  letter-spacing: 0.25px;
 }
 
-a,a:link,a:visited{
-    color: v.$text-primary;
+a,
+a:link,
+a:visited {
+  color: v.$text-primary;
+}
+
+a.button {
+  height: 68px;
+  max-width: 700px;
+  padding: 20.5px 33px;
+  background: v.$primary;
+  border: none;
+  color: v.$text-primary;
+  letter-spacing: 1px;
+  text-decoration: none;
+  align-items: center;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.2s ease 0s;
+  vertical-align: middle;
+  font-size: 18px;
 }

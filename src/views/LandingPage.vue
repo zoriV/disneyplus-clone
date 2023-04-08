@@ -1,6 +1,7 @@
 <script setup>
-import DeviceCard from "@/components/DeviceCard.vue";
-import AccordionItem from "@/components/AccordionItem.vue";
+import DeviceCard from "@Components/DeviceCard.vue";
+import AccordionItem from "@Components/AccordionItem.vue";
+import BundleCard from "@Components/BundleCard.vue";
 
 const data = [
   {
@@ -43,6 +44,9 @@ const data = [
     <section>
       <h1 class="section-title">Watch the way you want</h1>
       <p>Enjoy the world's greatest stories - anytime, anywhere.</p>
+    </section>
+    <section>
+      <BundleCard />
     </section>
     <section class="devices">
       <h2 class="section_title">Available on your favourite devices</h2>
