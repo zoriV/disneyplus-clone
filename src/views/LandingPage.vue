@@ -2,8 +2,9 @@
 import DeviceCard from "@Components/DeviceCard.vue";
 import AccordionItem from "@Components/AccordionItem.vue";
 import BundleCard from "@Components/BundleCard.vue";
+import ShowcaseCard from "@Components/ShowcaseCard.vue";
 
-const data = [
+const deviceData = [
   {
     name: "TV",
     devices: [
@@ -26,9 +27,9 @@ const data = [
   {
     name: "Mobile & Tablet",
     devices: [
-      "Tablety Amazon Fire",
-      "Telefony i tablety Android",
-      "iPhone oraz iPad",
+      "Amazon Fire Tablets",
+      "Android Phones & Tablets",
+      "iPhone and iPad",
     ],
     imgName: "phone.png",
   },
@@ -38,21 +39,28 @@ const data = [
     imgName: "gamepad.png",
   },
 ];
+
+const showcaseData = [
+"Host virtual movie nights with GroupWatch. Pause, rewind, and react with up to six friends. To invite or be invited to join GroupWatch, subscription is required.",
+"Download any movie or series and watch it on the go.",
+"Keep your family safe with easy parental controls.",
+"An ever-growing range of titles in stunning 4K UHD and Dolby Atmos sound on compatible devices.",
+"Stream on up to four devices at the same time.",
+]
 </script>
 <template>
   <main>
     <section>
-      <h1 class="section-title">Watch the way you want</h1>
-      <p>Enjoy the world's greatest stories - anytime, anywhere.</p>
+      <ShowcaseCard title="Watch the way you want" :content="showcaseData"/>
     </section>
     <section>
       <BundleCard />
     </section>
     <section class="devices">
-      <h2 class="section_title">Available on your favourite devices</h2>
+      <h2 class="section-title text-big text-big">Available on your favourite devices</h2>
       <div class="devices__wrapper">
         <DeviceCard
-          v-for="{ name, devices, imgName } in data"
+          v-for="{ name, devices, imgName } in deviceData"
           :title="name"
           :devices="devices"
           :key="name"
@@ -61,7 +69,7 @@ const data = [
       </div>
     </section>
     <section class="FAQ">
-      <h2 class="section_title">Frequently Asked Questions</h2>
+      <h2 class="section-title text-big">Frequently Asked Questions</h2>
       <div class="FAQ__wrapper">
         <AccordionItem title="What is Disney+">
           <p>
@@ -163,21 +171,26 @@ const data = [
           </ol>
           For more information click <a href="#">here</a>.
         </AccordionItem>
-        <AccordionItem title="What's included on the Disney+ plans with and without ads?">
+        <AccordionItem
+          title="What's included on the Disney+ plans with and without ads?"
+        >
           <p>
-            You can now get the following plans with Disney+ and choose your streaming experience: 
-            Disney+ Basic: Disney+ (With Ads) for $7.99/month
+            You can now get the following plans with Disney+ and choose your
+            streaming experience: Disney+ Basic: Disney+ (With Ads) for
+            $7.99/month
           </p>
-<li>Thousands of award-winning classics and Originals</li>
-<li>The ability to watch on four screens at once at no extra cost</li>
-<li>Over 300 titles in 4K UHD and HDR</li>
-<p>Disney+ Premium: Disney+ (No Ads) for $10.99/month or $109.99/year</p>
-<li>Thousands of award-winning classics and Originals</li>
-<li>The ability to watch on four screens at once at no extra cost</li>
-<li>Over 300 titles in 4K UHD and HDR</li>
-<li>Unlimited downloads on up to 10 devices</li>
-<li>Groupwatch</li>
-<li>Dolby Atmos</li>
+          <li>Thousands of award-winning classics and Originals</li>
+          <li>The ability to watch on four screens at once at no extra cost</li>
+          <li>Over 300 titles in 4K UHD and HDR</li>
+          <p>
+            Disney+ Premium: Disney+ (No Ads) for $10.99/month or $109.99/year
+          </p>
+          <li>Thousands of award-winning classics and Originals</li>
+          <li>The ability to watch on four screens at once at no extra cost</li>
+          <li>Over 300 titles in 4K UHD and HDR</li>
+          <li>Unlimited downloads on up to 10 devices</li>
+          <li>Groupwatch</li>
+          <li>Dolby Atmos</li>
         </AccordionItem>
       </div>
     </section>
@@ -187,10 +200,10 @@ const data = [
 @use "@/styles/generic" as g;
 
 main {
-  section{
+  section {
     padding: 5.6vw;
   }
-  .section_title {
+  .section-title {
     text-align: center;
     font-size: 2.5em;
   }
@@ -204,6 +217,7 @@ main {
       flex-direction: row;
       justify-content: center;
       flex-wrap: wrap;
+      padding-left: 0;
     }
   }
 }

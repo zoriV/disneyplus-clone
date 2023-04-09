@@ -59,12 +59,16 @@ import imageSmall from "@/assets/img/disneybundle-small.png";
     }
     @media screen and (max-width: 769px) {
       text-align: center;
+      margin-top: 12px;
     }
 
     &-claim{
       font-weight: 400;
       font-size: 24px;
       line-height: 34px;
+      margin: 0;
+      padding: 0;
+      margin-bottom: 24px;
     }
     &-terms{
       font-size: 12px;
