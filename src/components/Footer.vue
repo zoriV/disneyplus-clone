@@ -1,7 +1,7 @@
 <template>
   <footer>
     <img :src="logo" alt="logo" class="logo">
-    <ul class="fine">
+    <ul class="fine no-margin">
       <li><a href="#">Subscriber Agreement</a></li>
       <li><a href="#">Privacy Policy</a></li>
       <li><a href="#">UK & EU Privacy Rights</a></li>

@@ -3,6 +3,7 @@ import DeviceCard from "@Components/DeviceCard.vue";
 import AccordionItem from "@Components/AccordionItem.vue";
 import BundleCard from "@Components/BundleCard.vue";
 import ShowcaseCard from "@Components/ShowcaseCard.vue";
+import Plans from "@Components/Plans.vue";
 
 const deviceData = [
   {
@@ -50,6 +51,11 @@ const showcaseData = [
 </script>
 <template>
   <main>
+    <section class="plans">
+      <h2 class="section-title text-big">Choose your plan</h2>
+      <p class="plans-description text-secondary">Switch or cancel* anytime.</p>
+      <Plans/>
+    </section>
     <section>
       <ShowcaseCard title="Watch the way you want" :content="showcaseData"/>
     </section>
@@ -57,7 +63,7 @@ const showcaseData = [
       <BundleCard />
     </section>
     <section class="devices">
-      <h2 class="section-title text-big text-big">Available on your favourite devices</h2>
+      <h2 class="section-title text-big">Available on your favourite devices</h2>
       <div class="devices__wrapper">
         <DeviceCard
           v-for="{ name, devices, imgName } in deviceData"
@@ -202,14 +208,24 @@ const showcaseData = [
 main {
   section {
     padding: 5.6vw;
-  }
-  .section-title {
-    text-align: center;
-    font-size: 2.5em;
-  }
-  .FAQ {
-    display: flex;
-    flex-direction: column;
+    .section-title {
+      text-align: center;
+      font-size: 2.5em;
+    }
+    &.plans{
+      .section-title{
+        margin: 0;
+        margin-bottom: 4px;
+      }
+      .plans-description {
+        text-align: center;
+        margin: 0;
+      }
+    }
+    &.FAQ {
+      display: flex;
+      flex-direction: column;
+    }
   }
   .devices {
     &__wrapper {
