@@ -4,6 +4,7 @@ import AccordionItem from "@Components/AccordionItem.vue";
 import BundleCard from "@Components/BundleCard.vue";
 import ShowcaseCard from "@Components/ShowcaseCard.vue";
 import Plans from "@Components/Plans.vue";
+import Series from "@Components/Series.vue";
 
 const deviceData = [
   {
@@ -51,6 +52,9 @@ const showcaseData = [
 </script>
 <template>
   <main>
+    <section class="series">
+      <Series />
+    </section>
     <section class="plans">
       <h2 class="section-title text-big">Choose your plan</h2>
       <p class="plans-description text-secondary">Switch or cancel* anytime.</p>
