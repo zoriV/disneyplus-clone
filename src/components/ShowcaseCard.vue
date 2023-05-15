@@ -45,7 +45,7 @@ const props = defineProps({
     max-width: 50%;
     display: block;
     height: auto;
-    width: 100%;
+    flex: 1;
   }
 }
 </style>

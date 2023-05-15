@@ -5,6 +5,8 @@ import BundleCard from "@Components/BundleCard.vue";
 import ShowcaseCard from "@Components/ShowcaseCard.vue";
 import Plans from "@Components/Plans.vue";
 import Series from "@Components/Series.vue";
+import HeaderImg from "@Assets/img/bg.jpg";
+import Header from "@Components/Header.vue";
 
 const deviceData = [
   {
@@ -52,6 +54,9 @@ const showcaseData = [
 </script>
 <template>
   <main>
+    <section class="header" :style="{ backgroundImage: `url('${HeaderImg}')` }">
+      <Header />
+    </section>
     <section class="series">
       <Series />
     </section>
@@ -215,6 +220,23 @@ main {
     .section-title {
       text-align: center;
       font-size: 2.5em;
+    }
+    &.header {
+      position: relative;
+      background-repeat: no-repeat;
+      background-size: cover;
+      isolation: isolate;
+      min-height: 75vh;
+      &::before{
+        content: '';
+        z-index: -1;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: linear-gradient(0deg, g.$bg, transparent);
+        height: 50%;
+      }
     }
     &.plans{
       .section-title{
