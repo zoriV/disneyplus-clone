@@ -60,11 +60,11 @@ const showcaseData = [
     <section class="series">
       <Series />
     </section>
-    <section class="plans">
+    <!-- <section class="plans">
       <h2 class="section-title text-big">Choose your plan</h2>
       <p class="plans-description text-secondary">Switch or cancel* anytime.</p>
       <Plans/>
-    </section>
+    </section> -->
     <section>
       <ShowcaseCard title="Watch the way you want" :content="showcaseData"/>
     </section>
