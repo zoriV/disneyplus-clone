@@ -1,20 +1,30 @@
 <template>
   <div class="claim">
-    <img :src="image" alt="header image">
-    <p class="text-secondary">Enter your email to create or restart your subscription.</p>
-    <div class="register">
-      <input type="mail" placeholder="Email">
-      <button>continue</button>
+    <div class="plans">
+      <div>
+        <img :src="image_hulu" alt="duo bundle" />
+        <a class="button">get them both</a>
+        <p class="pricing">Starting at $9.99/month</p>
+      </div>
+      <div>
+        <img :src="image_espn" alt="trio bundle" />
+        <a class="button">get all three</a>
+        <p class="pricing">Starting at $14.99/month</p>
+      </div>
     </div>
     <div class="bottom">
       <a href="#">Terms Apply</a>
-      <p class="text-secondary text-medium">All of these and more now streaming on Disney+, Hulu, and ESPN+ with the Disney Bundle.</p>
+      <p class="text-secondary text-medium">
+        All of these and more now streaming on Disney+, Hulu, and ESPN+ with the
+        Disney Bundle.
+      </p>
       <a href="#">View All Plan Options</a>
     </div>
   </div>
 </template>
 <script setup>
-import image from "@Assets/img/header.svg"
+import image_hulu from "@Assets/img/header_hulu.png";
+import image_espn from "@Assets/img/header_hulu+espn.png";
 </script>
 <style lang="scss" scoped>
 @use "@/styles/generic" as g;
@@ -27,61 +37,54 @@ import image from "@Assets/img/header.svg"
     width: 36%;
     margin: 0 auto;
   }
-  .register{
+  .plans {
     $padding: 16px;
     $border: 5px;
 
     margin-block: 12px 36px;
     color: g.$text-primary;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    @media screen and (max-width: 500px) {
-      flex-direction: column;
-      gap: 16px;
-    }
-    input {
-      background-color: #31343e;
-      flex: 1;
-      padding: $padding;
-      border-radius: $border 0 0 $border;
-      color: g.$text-secondary;
-      border: 1px solid #585858;
-      max-width: 500px;
-      @media screen and (max-width: 1020px){
-        max-width: none;
-      }
-      @media screen and (max-width: 500px) {
-        border-radius: $border;
+    width: minmax(400px, calc(100% - 400px));
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    column-gap: 12px;
+    // @media screen and (max-width: 500px) {
+    //   flex-direction: column;
+    //   gap: 16px;
+    // }
+    & > div {
+      display: grid;
+      grid-template-columns: subgrid;
+      a {
+        text-transform: uppercase;
       }
     }
-    input::placeholder{
-      color: inherit;
-    }
-    button {
-      width: 200px;
-      padding: $padding;
-      cursor: pointer;
-      border: 0;
-      color: inherit;
-      text-transform: uppercase;
-      font-weight: 700;
-      background-color: g.$primary;
-      border-radius: 0 $border $border 0;
-      @media screen and (max-width: 500px) {
-        width: 100%;
-        border-radius: $border;
-      }
-    }
+    // button {
+    //   width: 100%;
+    //   max-width: 700px;
+    //   padding: $padding;
+    //   cursor: pointer;
+    //   border: 0;
+    //   color: inherit;
+    //   text-transform: uppercase;
+    //   font-weight: 500;
+    //   font-size: 18px;
+    //   background-color: g.$primary;
+    //   border-radius: 0 $border $border 0;
+    //   @media screen and (max-width: 500px) {
+    //     width: 100%;
+    //     border-radius: $border;
+    //   }
+    // }
   }
   .bottom {
     & > p {
       margin: 0 18px 28px 0;
     }
-    a:first-child{
+    a:first-child {
       font-size: 14px;
     }
-    a:last-child{
+    a:last-child {
       font-size: 18px;
     }
   }
